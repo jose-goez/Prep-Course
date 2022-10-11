@@ -27,7 +27,6 @@ const nuevoModulo = 21 % 5 === 1;
 function devolverString(str) {
   // "Return" la string provista: str
   // Tu código:
-  str = "aspirante";
   return str;
 }
 function suma(x, y) {
@@ -105,7 +104,7 @@ function mayorQueCincuenta(num) {
 function obtenerResto(x, y) {
   // Obten el resto de la división de "x" entre "y"
   // Tu código:
-  let resto = x / y;
+  let resto = x % y;
   return resto;
 }
 
@@ -124,6 +123,7 @@ function esImpar(num) {
   // Devuelve "true" si "num" es impar
   // De lo contrario, devuelve "false"
   // Tu código:
+
   if (num % 2 == 1) {
     return true;
   } else {
@@ -181,14 +181,12 @@ function esPositivo(numero) {
   //Si el número es negativo, devolver ---> "Es negativo"
   //Si el número es 0, devuelve false
   if (numero >= 1) {
-    let positive = "Es positivo";
-    return positive;
+    return "Es positivo";
   } else if (numero === 0) {
     let falso = false;
     return falso;
-  } else if (numero < 1) {
-    let negative = "Es negative";
-    return negative;
+  } else if (numero <= 1) {
+    return "Es negativo";
   }
 }
 
@@ -196,16 +194,14 @@ function agregarSimboloExclamacion(str) {
   // Agrega un símbolo de exclamación al final de la string "str" y devuelve una nueva string
   // Ejemplo: "hello world" pasaría a ser "hello world!"
   // Tu código:
-  str = "Hello word";
-  return str + "!";
+  let  exclamacion = "!";
+  return str + exclamacion;
 }
 
 function combinarNombres(nombre, apellido) {
   // Devuelve "nombre" y "apellido" combinados en una string y separados por un espacio.
   // Ejemplo: "Soy", "Henry" -> "Soy Henry"
   // Tu código:
-  nombre = "Soy";
-  apellido = "Henry";
   return nombre + " " + apellido;
 }
 
@@ -213,8 +209,7 @@ function obtenerSaludo(nombre) {
   // Toma la string "nombre" y concatena otras string en la cadena para que tome la siguiente forma:
   // "Martin" -> "Hola Martin!"
   // Tu código:
-  nombre = "Martin";
-  return "Hola" + " " + nombre;
+  return "Hola" + " " + nombre + "!";
 }
 
 function obtenerAreaRectangulo(alto, ancho) {
