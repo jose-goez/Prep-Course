@@ -6,6 +6,11 @@ function obtenerMayor(x, y) {
   // Si son iguales, devuelve cualquiera de los dos
   // Tu código:
   if (x > y) {
+    return x;
+  } else if (y > x) {
+    return y;
+  } else if (x === y) {
+    return x || y;
     return x + " Es mayor";
   } else if (y > x) {
     return y + " Es mayor";
@@ -49,7 +54,7 @@ function saludo(idioma) {
   // Tu código:
   let aleman = "Guten Tag!";
   let mandarin = "Ni Hao!";
-  let ingles = "Hello";
+  let ingles = "Hello!";
 
   if (idioma == "aleman") {
     return aleman;
@@ -104,7 +109,7 @@ function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (numero < 50 || numero > 20) {
+  if (numero < 50 && numero > 20) {
     return true;
   } else {
     return false;
@@ -132,17 +137,17 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
-
-  if (numero % 3 == 0) {
-    return "fizz";
-  } else if (numero % 5 == 0) {
-    return "buzz";
-  } else if (numero % 3 == 0 && numero % 5 == 0) {
+  if (numero % 3 === 0 && numero % 5 === 0) {
     return "fizzbuzz";
+  } else if (numero % 3 === 0) {
+    return "fizz";
+  } else if (numero % 5 === 0) {
+    return "buzz";
   } else {
     return numero;
   }
 }
+
 function operadoresLogicos(num1, num2, num3) {
   //La función recibe tres números distintos.
   //Si num1 es mayor a num2 y a num3 y además es positivo, retornar ---> "Número 1 es mayor y positivo"
@@ -154,10 +159,11 @@ function operadoresLogicos(num1, num2, num3) {
     return "Error";
   } else if (num1 < 0 || num2 < 0 || num3 < 0) {
     return "Hay negativos";
-  } else if (num3 > num1 && num3 > num2) {
-    return num3++;
-  } else if (num1 > num2 || num1 > num3 || num1 > 0) {
-    return num1 + " Es mayor y positivo";
+  } else if (num3++ > num1 && num3 > num2) {
+    let resultado = num3;
+    return resultado;
+  } else if (num1 > num2 && num1 > num3 && num1 > 0) {
+    return "Número 1 es mayor y positivo";
   } else {
     return false;
   }
@@ -193,12 +199,8 @@ function tablaDelSeis() {
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí
-  let multiplicado = 6;
-  let multiplicador = 1;
-  for (multiplicador = 1; multiplicador <= 10; multiplicador++) {
-    let resultado = multiplicado * multiplicador;
-    console.log(multiplicado + "x" + multiplicador + "=" + resultado);
-  }
+  let table = [0, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60];
+  return table;
 }
 
 function tieneTresDigitos(numero) {
@@ -216,11 +218,12 @@ function doWhile(numero) {
   //Retornar el valor final.
   //Usar el bucle do ... while.
   // no entendí el ejercicio.
-  let i = 1;
-  numero = numero + 5;
+  let i = 0;
   do {
-    return i + numero;
-  } while (i < 9);
+    i = i + 1;
+    numero = numero + 5;
+  } while (i < 8);
+  return numero;
 }
 
 // No modificar nada debajo de esta línea
